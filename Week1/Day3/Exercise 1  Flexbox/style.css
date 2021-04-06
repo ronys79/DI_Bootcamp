@@ -1,0 +1,40 @@
+
+.all {
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        border: red solid
+    }
+
+/* .flex-container > div {} */
+/* align-content: center; */
+
+
+.a {
+    background-color: aquamarine;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: stretch;
+
+}
+
+.b {
+    background-color: aquamarine;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    /* display: flex; */
+    /* justify-content: center; */
+    align-self: center;
+    /* align-content: center; */
+
+}
+
+.c {
+    background-color: aquamarine;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: stretch;
+}
