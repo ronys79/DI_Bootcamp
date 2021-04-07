@@ -1,0 +1,30 @@
+.hearderwrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-bottom: 2px grey solid
+}
+
+.info {
+    font-family: 'Kiwi Maru', serif;
+    font-size: 3em;
+}
+
+.bodywrap {
+display: flex;
+}
+.leftbody education {
+    border-right: 2px solid grey;
+    padding-right: 100px;
+}
+.rightbody {
+    flex-direction: row;
+    flex-direction: column;
+}
+.line {
+    display: flex;
+    width: 10px;
+    height: 10px;
+    background-color:20px grey;
+    flex-direction: column;
+}

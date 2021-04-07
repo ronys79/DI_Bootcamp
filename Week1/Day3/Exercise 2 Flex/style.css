@@ -1,0 +1,110 @@
+.all {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    border: red solid;
+}
+
+.a {
+    background-color: yellow;
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.b {
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    align-self: center;
+}
+
+.c {
+    background-color: yellow;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: stretch;
+}
+
+.d {
+    background-color: yellow;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: stretch;
+}
+
+.e {
+    background-color: yellow;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: stretch;
+}
+
+.f {
+    background-color: yellow;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: stretch;
+}
+
+.g {
+    background-color: yellow;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: stretch;
+}
+
+.h {
+    background-color: yellow;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: stretch;
+}
+
+.i {
+    background-color: yellow;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: stretch;
+}
+
+.j {
+    background-color: yellow;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: stretch;
+}
+
+.k {
+    background-color: yellow;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: stretch;
+}
+
+.l {
+    background-color: yellow;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: stretch;
+}
+.m {
+    background-color: yellow;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: stretch;
+}

@@ -3,7 +3,7 @@
         display: flex;
         align-content: center;
         flex-direction: column;
-        border: red solid
+        border: red solid;
     }
 
 /* .flex-container > div {} */
