@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Buda:300|Ubuntu');
-
+/*
 font-family: 'Buda', cursive;
 font-family: 'Ubuntu', sans-serif;
-
+*/
 
 html,
 body,
@@ -72,7 +72,7 @@ h3 {
     margin: 0 auto;
 }
 
-/* nav.navbar-inverse {
+nav.navbar-inverse {
     background: rgba(0,0,0,0.5);
     border: none;
 }
@@ -83,7 +83,7 @@ h3 {
     font-weight: normal;
     color: #fff;
     letter-spacing: 1px;
-} */
+}
 
 section {
     padding: 100px;
@@ -107,6 +107,7 @@ h2 {
 #portfolio {
 background-color: #222;
 background-image: url("https://www.transparenttextures.com/patterns/pw-pattern.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
     color: white;
     text-align: center;
 }
@@ -217,7 +218,7 @@ footer {
         padding: 40px 10px;
     }
     
-    /* .navbar-toggle {
+    .navbar-toggle {
         margin-right: 20px;
-    } */
+    }
 }

@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+}
+
+.left {
+width:50px;
+Height:100px;
+background-color: blue;
+}
+
+.center {
+    width:50px;
+    Height:100px;
+    background-color: white;
+}
+
+.right {
+    width:50px;
+    Height:100px;
+    background-color: red;
+}
