@@ -1,0 +1,16 @@
+body {
+    background-color: bisque;
+}
+.row {
+margin: 1rem;
+}
+
+.btn {
+margin: 1rem;
+}
+.card-group {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}

@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+html,h1,h2,h3,h4,h5,h6,a{
+    font-family: "Raleway";
+}
+
+.intro {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+  }
+
+  .txt1 {
+    margin-left: 90px;
+  }
+
+/* make it more responsive with this??  */
+  
+  /* @media {
+  body {
+    @media screen and (min-width: 600px)\
+    @media screen and (min-width: 900px)
+  } */
