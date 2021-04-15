@@ -103,7 +103,8 @@ example: "Hi! I'm [name], and I'm from [country]."
 Hint: Look up the statement if ... in
 If the name is not in the object, console.log: "Hi! I'm a guest."
 */
-
+/*
+-----------------   
 let guestList = {
   randy: "Germany",
   karla: "France",
@@ -121,6 +122,9 @@ else {
     console.log("Hi! I'm a guest.");
     alert('Hi! you are a guest');
 }
+------------------------
+*/
+
 // Exercise 5 : Family
 // Instructions
 // Create an object called family with a few key value pairs.
@@ -136,7 +140,16 @@ else {
 //   the: 'raindeer'
 // }
 // Given the object above, console.log “my name is Rudolf the raindeer”
-
+/*
+------------------------ ??? DID I DO THIS RIGHT OR CHEAT AND JUST CONSOLE LOG WITHOUT GOING INTO A LOOP?-----
+let details = {
+  my: 'name',
+  is: 'Rudolf',
+  the: 'raindeer'
+}
+console.log("My "+ details.my + " is " + details.is + " the " + details.the)
+--------------------------------
+*/
 
 // Exercise 7 : Secret Group
 // Instructions
@@ -144,3 +157,53 @@ else {
 // A group of friends have decided to start a secret society. The society’s name will be the first letter of each of their names sorted in alphabetical order.
 // Hint: a string is an array of letters
 // Console.log the name of their secret society.
+/*
+------------------
+let names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"]
+names.sort();
+let acronym = "";
+for (str of names)
+    acronym += str[0];
+
+console.log(acronym);
+------------------
+*/
+/*
+// google search tips:
+1. Addition assignment (+=)
+The addition assignment operator (+=) adds the value of the right operand to a variable and assigns the result to the variable. 
+The types of the two operands determine the behavior of the addition assignment operator. Addition or concatenation is possible.
+
+2. var names = ['adam', 'bianca', 'cat', 'dennis'];
+var myFunc = function (names) {
+    for (var i = 0; i < names.length; i += 1) {
+        // Use the index i here
+        console.log(names[i].charAt(0).sort());
+    }
+}
+
+1. 
+let a = 2;
+let b = 'hello';
+
+console.log(a += 3); // addition
+expected output: 5
+
+console.log(b += ' world'); // concatenation
+expected output: "hello world"
+
+not sure what this does....
+for (names i = 0; i < str.length; i++) {
+    alert(str.charAt(i));
+}
+
+let names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"]
+
+public class Main {
+    public static void main(String[] args) {
+      String myStr = "Hello";
+      char result = myStr.charAt(0);
+      System.out.println(result);
+    }
+  }
+  */
