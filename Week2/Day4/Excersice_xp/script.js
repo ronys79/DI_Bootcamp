@@ -147,36 +147,36 @@ If the item is in stock find out the price in the prices object.
 Call the myBill() function.
 Bonus: If the item is in stock, decrease the item’s stock by 1
 
-let shoppingList = ["banana", "orange",  "apple"];
-
-let stock = { 
-    "banana": 6, 
+let stock = {
+    "banana": 6,
     "apple": 0,
     "pear": 12,
     "orange": 32,
-    "blueberry":1
-}  
-
-let prices = {    
-    "banana": 4, 
-    "apple": 2, 
+    "blueberry": 1
+};
+let prices = {
+    "banana": 4,
+    "apple": 2,
     "pear": 1,
     "orange": 1.5,
-    "blueberry":10
-} 
+    "blueberry": 10
+};
+let shoppingList = ["banana", "orange", "apple"];
 
 function myBill() {
-    shoppingList.includes(stock[i])
-    
-    // if (shoppingList.includes stock) {
-    }
+    let bill = 0;
     for (item of shoppingList) {
-        if (stock.item > 0) {
-            let in_stock = shoppinglist.stock
-        }
-    }
-    
-    */
+        if (stock[item] > 0) {
+            bill += prices[item];
+            stock[item] -= 1;
+        };
+    };
+    return bill;
+};
+console.log("Cart total amount = ", myBill());
+*/
+
+
    /*
     Exercise 6 : Tips
     Instructions
@@ -197,9 +197,18 @@ function myBill() {
     */
    /*
 
-   Write the code here!!!! 
 */
+/*
+function theTip(bill) {
+    let tip = 0;
+    if (bill < 50) { tip = 1.20 } 
+    else if (bill < 200) { tip = 1.15 } 
+    else { tip = 1.10 };
+    return (bill * tip);
+};
 
+console.log("Tip the waiter ", Math.round(theTip(+prompt("How much is the bill?"))));
+*/
 /*
     Exercise 7 : Vacations Costs
     Instructions
@@ -230,5 +239,5 @@ function myBill() {
 
     */
    /* 
-   WRITE THE CODE HERE!!!!
+ OMG! i dont know where to start on this one. I am lost with all of it...
    */
