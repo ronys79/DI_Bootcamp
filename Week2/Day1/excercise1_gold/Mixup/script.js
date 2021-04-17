@@ -1,4 +1,4 @@
-let str1 = "mix";
+ let str1 = "mix";
 let chunk1 = str1.slice(0, 2);
 let str2 = "pod";
 let chunk2 = str2.slice(0, 2);
