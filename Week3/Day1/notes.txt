@@ -1,0 +1,46 @@
+<html>
+<body>
+  <div>Users:</div>
+  <ul>
+    <li>John</li>
+    <li>Pete</li>
+  </ul>
+</body>
+</html>
+
+For each of the questions, find 2 WAYS of accessing :
+
+1. The div DOM node?
+    i. document.querySelector("div")
+    ii. document.getElementsByTagName("div")
+2. The ul DOM node?
+    i. document.querySelectorAll("ul")
+    document.getElementsByTagName("ul")
+3. The second li (with Pete)?
+        i. document.querySelector("li")[1]
+        ii. document.getElementsByTagName("li") [1]
+        ii. .document.element.lastElementChild("li")
+
+----
+
+Exercise 2
+<html>
+<body>
+  <div id="container">Users:</div>
+  <ul class="list">
+    <li>John</li>
+    <li>Pete</li>
+  </ul>
+  <ul class="list">
+    <li>Sarah</li>
+    <li>Dan</li>
+  </ul>
+</body>
+</html>
+For each of the questions, find 2 PROPERTIES to access :
+
+1. The div node
+    i . document.getElementById("container")
+2. The ul nodes, and render all of it's children one by one
+    i. document.getElementsByClassName("")
+3. The first li of each ul

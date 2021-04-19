@@ -1,5 +1,5 @@
 function math() {
-    let num1 = +prompt("Type first number");
+    let num1 = [];
     let sym1 = prompt("what ya want to do with it");
     let num2 = +prompt("Type second number");
     
