@@ -35,13 +35,8 @@
 // };
 
 // Exercise 3 : Users And Style
-// For the following exercise use the HTML presented above:
-
-// Add a “light blue” background color and some padding to the <div>.
-// Do not display the first name (John) in the list.
-// Add a border to the second name (Pete).
-// Change the font size of the whole body.
-// Bonus: If the background color of the div is “light blue”, alert “Hello x and y” (x and y are the users in the div).
+// Bonus: If the background color of the div is “light blue”, alert “Hello x and y” 
+// (x and y are the users in the div).
 
 document.getElementsByTagName('div')[0].style.backgroundColor = 'lightblue';
 document.getElementsByTagName('div')[0].style.padding = "50px 10px 20px 30px";
