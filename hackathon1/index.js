@@ -31,7 +31,7 @@ class HealthBar {
   // health bar end
 
 const canvas = document.getElementById("canvas");
-const context = canvas.getContext("2d").createTextNode("This just got added") ;
+const context = canvas.getContext("2d");
 const width = canvas.width = 80;
 const height = canvas.height = 40;
 
