@@ -1,11 +1,13 @@
+/* health bar style */ 
 canvas {
     background: lightgray;
     /* display: block; */
     position: absolute;
+    /* CSS tweak position of health bar */
     top: 0px;
     right: 10px;
-    margin: 0px;
-    border: solid 6px #444;
+    margin: 10px;
+    border: solid 6px black;
   }
 
 

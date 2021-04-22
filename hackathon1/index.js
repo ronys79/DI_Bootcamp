@@ -31,12 +31,12 @@ class HealthBar {
   // health bar end
 
 const canvas = document.getElementById("canvas");
-const context = canvas.getContext("2d");
+const context = canvas.getContext("2d").createTextNode("This just got added") ;
 const width = canvas.width = 80;
 const height = canvas.height = 40;
 
-// use this to position bar on top of page, not sure thou, setting is 2 + 2 for middle
-canvas.style.marginTop = window.innerHeight / 10 - height / 10 + "px";
+// health bar on top right margin of page
+canvas.style.marginTopRight = window.innerHeight / 2 - height / 2 + "px";
 
 let health = 100;
 const healthBarWidth = 70;
@@ -51,7 +51,7 @@ const frame = function() {
   healthBar.show(context);
   requestAnimationFrame(frame);
 }
-// health is how much HP lost per wrong answer. set at -33 per wrong answer = 3 lives
+// health - how much HP lost per wrong answer. set at -33 per wrong answer = 3 lives
 canvas.onclick = function() {
   health -= 33;
   healthBar.updateHealth(health);
