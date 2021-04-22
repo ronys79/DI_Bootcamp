@@ -1,0 +1,11 @@
+canvas {
+    background: lightgray;
+    /* display: block; */
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    margin: 0px;
+    border: solid 6px #444;
+  }
+
+
