@@ -15,7 +15,7 @@ class HealthBar {
     show(context) {
       // border around red bar
       context.lineWidth = 4;
-      context.strokeStyle = "#333";
+      context.strokeStyle = "darkgrey";
       context.fillStyle = this.color;
       context.fillRect(this.x, this.y, this.w, this.h);
       context.strokeRect(this.x, this.y, this.maxWidth, this.h);
