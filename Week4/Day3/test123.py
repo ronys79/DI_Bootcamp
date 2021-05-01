@@ -176,5 +176,35 @@
 
 # print(sampleDict)
 
-sentence = input("Enter a sentence :")
-print(" ".join(reversed(sentence.split())))
+# sentence = input("Enter a sentence :")
+# print(" " reversed(sentence.split()))
+
+# REverseinp= input('enter a sentence')
+# print(" ".join(reversed(REverseinp.split())))
+
+# for letter in text:
+#     cypher_text += chr(ord(letter) + 3)
+
+# Exercise
+# Write a function calculation() such that it can accept two variables and 
+# calculate the addition and subtraction of it. And also it must return both addition and subtraction 
+# in a single return call
+
+# For example:
+
+# def calculation(a, b):
+#     return a + b, a - b
+
+# res = calculation(40, 10)
+# print(res)
+picture[...
+
+]
+
+for image in picture:
+    for pixel in image:
+        if (pixel):
+            print('*', end ='')
+        else:
+            print(' ', end ='')
+    print('')

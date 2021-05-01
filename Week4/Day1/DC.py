@@ -21,29 +21,3 @@ for letter in sen:
 
 mixed_sen = ''.join(random.sample(sen, len(sen)))
 print(mixed_sen)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-for i, char in enumerate(user_input):
-    print(user_input[: i + 1])
-
-input_list = list(user_input)
-random.shuffle(input_list)
-print("".join(input_list))
-    
