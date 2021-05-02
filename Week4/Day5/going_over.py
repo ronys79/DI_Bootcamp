@@ -493,17 +493,17 @@
 
 # # shelter_dog = Dog()
 
-# # class Point():
-# #     def __init__(self, x, y):
-# #         self.x = x
-# #         self.y = y
+class Point():
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-# # ## create an instance of the class
-# # p = Point(3,4)
+## create an instance of the class
+p = Point(3,4)
 
-# # ## access the attributes
-# # print("p.x is:", p.x)
-# # print("p.y is:", p.y)
+## access the attributes
+print("p.x is:", p.x)
+print("p.y is:", p.y)
 
 # # class Dog():
 # #     # Initializer / Instance Attributes
@@ -556,3 +556,22 @@
 #         print("-------------")
 #         for transaction in self.transactions:
 #             print(transaction)
+
+
+class Person():
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def show_details(self):
+        print("Hello my name is " + self.name)
+
+    def new_name(self, name):
+        self.name = name
+        print(f'Your new name is: {self.name}')
+
+
+
+first_person = Person("John", 36)
+first_person.new_name('Rony')
+first_person.show_details()
