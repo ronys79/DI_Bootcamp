@@ -56,36 +56,36 @@
 
 # Exercise 4 : Afternoon At The Zoo
 
-class Zoo:
-    def __init__(self, zoo_name):
-        self.name = zoo_name
-        self.animals = []
+# class Zoo:
+#     def __init__(self, zoo_name):
+#         self.name = zoo_name
+#         self.animals = []
 
-    def add_animal(self, new_animal):
-        if new_animal not in self.animals:
-            self.animals.append(new_animal)
-        print(self.animals)
+#     def add_animal(self, new_animal):
+#         if new_animal not in self.animals:
+#             self.animals.append(new_animal)
+#         print(self.animals)
 
-    def get_animals(self):
-        print(f'Number of animals is: {self.animals}')
+#     def get_animals(self):
+#         print(f'Number of animals is: {self.animals}')
     
-    def sell_animal(self, animal_sold):
-        self.animals.remove(animal_sold)
+#     def sell_animal(self, animal_sold):
+#         self.animals.remove(animal_sold)
 
-    def sort_animals(self):
-        self.animals.sort()
+#     def sort_animals(self):
+#         self.animals.sort()
 
-    def get_groups(self):
-        print(self.animals)
+#     def get_groups(self):
+#         print(self.animals)
 
 
-ramat_gan = Zoo("London")
-ramat_gan.add_animal('Tiger')
-ramat_gan.add_animal('Sheep')
-ramat_gan.add_animal('Cat')
-ramat_gan.sell_animal('Tiger')
-ramat_gan.sort_animals()
-ramat_gan.get_groups()
+# ramat_gan = Zoo("London")
+# ramat_gan.add_animal('Tiger')
+# ramat_gan.add_animal('Sheep')
+# ramat_gan.add_animal('Cat')
+# ramat_gan.sell_animal('Tiger')
+# ramat_gan.sort_animals()
+# ramat_gan.get_groups()
 
 # ***************************************************************
 # *****CHAIM YOU ARE A LEGEND THANKS FOR EVERYTHING YOU DO!******

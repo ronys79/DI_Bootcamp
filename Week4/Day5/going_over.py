@@ -493,17 +493,17 @@
 
 # # shelter_dog = Dog()
 
-class Point():
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+# class Point():
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
 
-## create an instance of the class
-p = Point(3,4)
+# ## create an instance of the class
+# p = Point(3,4)
 
-## access the attributes
-print("p.x is:", p.x)
-print("p.y is:", p.y)
+# ## access the attributes
+# print("p.x is:", p.x)
+# print("p.y is:", p.y)
 
 # # class Dog():
 # #     # Initializer / Instance Attributes
@@ -558,20 +558,84 @@ print("p.y is:", p.y)
 #             print(transaction)
 
 
-class Person():
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+# class Person():
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
 
-    def show_details(self):
-        print("Hello my name is " + self.name)
+#     def show_details(self):
+#         print("Hello my name is " + self.name)
 
-    def new_name(self, name):
-        self.name = name
-        print(f'Your new name is: {self.name}')
+#     def new_name(self, name):
+#         self.name = name
+#         print(f'Your new name is: {self.name}')
 
 
 
-first_person = Person("John", 36)
-first_person.new_name('Rony')
-first_person.show_details()
+# first_person = Person("John", 36)
+# first_person.new_name('Rony')
+# first_person.show_details()
+
+# class Circle:
+#     color = "red"
+
+# class NewCircle(Circle):
+#     color = "blue"
+
+# c= Circle
+# nc = NewCircle
+# print(c.color)
+
+# class Circle:
+#     def __init__(self, diameter):
+#       self.diameter = diameter
+
+#     def grow(self, factor=2):
+#         """grows the circle's diameter by factor"""
+#         self.diameter = self.diameter * factor
+
+# class NewCircle(Circle):
+#     def grow(self, factor=2):
+#         """grows the area by factor..."""
+#         self.diameter = (self.diameter * factor * 2)
+
+# nc = NewCircle(1)
+# print(nc.diameter)
+
+# nc.grow()
+
+# print(nc.diameter)
+
+# class Door():
+#     def __init__(self, is_opened):
+#         self.is_opened = is_opened
+
+#     def open_door(self):
+#         print('door has been opened')
+#         self.is_opened = True
+
+#     def close_door(self):
+#         print('door has been closed')
+#         self.is_opened = False
+
+
+# class BlockedDoor(Door):
+#     def open_door(self):
+#         print('door is blocked and cannot be opened or closed')
+
+#     def close_door(self):
+# #         self.open_door()
+
+# Given a list of numbers, write a function that returns the sum of every number. 
+# BUT you can have a malicious string inside the list.
+
+# my_list = [2,3,1,2,"four",42,1,5,3,"imanumber"]
+
+# def sum_malicious(g)
+
+def names(*agrs):
+    for name in agrs:
+        print(name)
+
+def dogs(*agrs):
+    for 
