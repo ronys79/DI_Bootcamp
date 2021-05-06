@@ -633,9 +633,9 @@
 
 # def sum_malicious(g)
 
-def names(*agrs):
-    for name in agrs:
-        print(name)
+# def names(*agrs):
+#     for name in agrs:
+#         print(name)
 
-def dogs(*agrs):
-    for 
+# def dogs(*agrs):
+#     for 
