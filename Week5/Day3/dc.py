@@ -39,3 +39,10 @@ Other abilities of a Circle instance:
     # Be able to put them in a list and sort them
 
 # after tis point i ams stuck, not sure how to use the decorators for this
+
+# from avi day after:
+# @staticmethod
+#     def sort_circles(circle_list):
+#         circle_list = list(filter(lambda a:isinstance(a, Circle), circle_list))
+#         circle_list.sort(key=lambda x:x.area)
+#         return circle_list
