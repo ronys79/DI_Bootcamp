@@ -3,10 +3,35 @@ from tkinter import *
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
-from tkinter import messagebox
+# from tkinter import messagebox
+import datetime
+# for input key verify
+import re
+# import sqlite3
+
+
+# # database to store inputs, no reason for this except to see if can do it
+# conn = sqlite3.connect('money.db')
+# # create cursos
+# c = conn.cursor
+
+# # create table
+# # THE FLIPPING execute doesnt work???? whyyyyy!!!!!
+# c.execute("""CREATE TABLE spy (
+#     {from_currency_variable} text,
+#     {amount} interger,
+#     {to_currency_variable} integer
+#     )""")
+
+# # databse commit changes
+# conn.commit()
+# # databse close connection
+# conn.close()
+
+
 
 # constructor of class
-class RealTimeCurrencyConverter():
+class CurrencyConverter():
     def __init__(self,url):
         # requests.get() loads the page then .json() will convert 
             self.data = requests.get(url).json()
@@ -25,26 +50,30 @@ class RealTimeCurrencyConverter():
 
 # UI class for currency converter
 class App:
+    
     # Frame created
     def __init__(self, converter):
         self.root = tk.Tk()
-        self.root.title('Real Time Currency Conversion')
+        # Date time for tab title
+        time = datetime.datetime.now()
+        time = time.strftime("Current Date: %d-%m-%Y   Current time: %H:%M")
+        self.root.title('Real Time Currency Conversion            ' + time)
         self.currency_converter = converter
-
-        self.root.configure(background = 'black')
+        # Background color which only affect tabs, must have magenta in code!
+        self.root.configure(background = 'dark magenta')
         self.root.geometry("700x400")
-
+        
         # Create Tabs
         self.tabControl = ttk.Notebook(self.root)
-        self.tabControl.pack(pady=5)
+        self.tabControl.pack(pady=1)
         # ------NEED HELP CREATING FRAMES PROPERLY
         # --------------------------------------------
-        # Create Two Frames - not oing this right or not linking them right
-        self.currency_frame = Frame(self.tabControl)
-        self.calculator_frame = Frame(self.tabControl)
-        self.bio_frame = Frame(self.tabControl)
+        # Create Two Frames - not doing this right or not linking them right
+        self.currency_frame = Frame(self.tabControl, width=700, height=400)
+        self.calculator_frame = Frame(self.tabControl, width=700, height=400)
+        self.bio_frame = Frame(self.tabControl, width=700, height=400)
 
-        self.currency_frame.pack(fill="both", expand=1)
+        self.currency_frame.pack(fill="both", expand=10)
         self.calculator_frame.pack(fill="both", expand=1)
         self.bio_frame.pack(fill="both", expand=1)
         # --------------------------------------------
@@ -82,50 +111,44 @@ class App:
         # lbl = tk.Label(self, image=img)
         # lbl.img = img  # for when used inside a method/function.
         # lbl.place(relx=0.5, rely=0.5, anchor='center')  # Place image in center of parent.
+        
 
         # responsive background image
         self.image = Image.open("images/bg2.jpg")
         self.img_copy= self.image.copy()
         self.background_image = ImageTk.PhotoImage(self.image)
-        self.background = Label(self.root, image=self.background_image)
+        self.background = Label(self.currency_frame, image=self.background_image)
         self.background.pack(fill=BOTH, expand=YES)
-        self.background.bind('<Configure>', self._resize_image)
-    # method for image to be responsive 
-    def _resize_image(self,event):
-
-        new_width = event.width
-        new_height = event.height
-        self.image = self.img_copy.resize((new_width, new_height))
-        self.background_image = ImageTk.PhotoImage(self.image)
-        self.background.configure(image =  self.background_image)
+        # no need for this when using frames, frame rezies image
+        # self.background.bind('<Configure>', self._resize_image)
+        
 
         # Label
-        self.intro_label = Label(self.root, text = 'Developer\'s Institute Hackacthon 2 \nCurrency converter', relief = tk.RAISED, borderwidth = 4)
+        self.intro_label = Label(self.currency_frame, text = 'Developer\'s Institute Hackacthon 2 \nCurrency converter', relief = tk.RAISED, borderwidth = 4)
         self.intro_label.config(font = ('Verdana',14,'bold'))
         self.root.iconbitmap('images/icon.ico')
-        self.date_label = Label(self.root, text = f"1 New Israeli Shekel = {self.currency_converter.convert('ILS','USD',1)} USD \n Date : {self.currency_converter.data['time_last_update_utc']}", relief = tk.GROOVE, font = ('Verdana',12,'bold'), borderwidth = 5)
+        self.date_label = Label(self.currency_frame, text = f"1 New Israeli Shekel = {self.currency_converter.convert('ILS','USD',1)} USD \n Last Update : {self.currency_converter.data['time_last_update_utc']}", relief = tk.GROOVE, font = ('Verdana',12,'bold'), borderwidth = 5)
 
         self.intro_label.place(relx = .5 , rely = .25, anchor=CENTER)
         self.date_label.place(relx = .5 , rely = .47, anchor=CENTER)
 
-
         # Entry box
         valid = (self.root.register(self.restrictNumberOnly), '%d', '%P')
-        self.amount_field = Entry(self.root,bd = 3, relief = tk.RIDGE, justify = tk.CENTER,validate='key', validatecommand=valid)
-        self.converted_amount_field_label = Label(self.root, text = '', fg = 'black', bg = 'white', relief = tk.RIDGE, justify = tk.CENTER, width = 17, borderwidth = 3)
+        self.amount_field = Entry(self.currency_frame,bd = 3, relief = tk.RIDGE, justify = tk.CENTER,validate='key', validatecommand=valid)
+        self.converted_amount_field_label = Label(self.currency_frame, text = '', fg = 'black', bg = 'white', relief = tk.RIDGE, justify = tk.CENTER, width = 17, borderwidth = 3)
 
         # dropdown
-        self.from_currency_variable = StringVar(self.root)
+        self.from_currency_variable = StringVar(self.currency_frame)
         self.from_currency_variable.set("ILS") # default value
-        self.to_currency_variable = StringVar(self.root)
+        self.to_currency_variable = StringVar(self.currency_frame)
         self.to_currency_variable.set("USD") # default value
 
         font = ("Courier", 12, "bold")
         self.root.option_add('*TCombobox*Listbox.font', font)
         # here it selects the currency keys from api/json see if can get 
         # a better api for free that displays currency name instead of acronym
-        self.from_currency_dropdown = ttk.Combobox(self.root, textvariable=self.from_currency_variable,values=list(self.currency_converter.currencies.keys()), font = font, state = 'readonly', width = 12, justify = tk.CENTER)
-        self.to_currency_dropdown = ttk.Combobox(self.root, textvariable=self.to_currency_variable,values=list(self.currency_converter.currencies.keys()), font = font, state = 'readonly', width = 12, justify = tk.CENTER)
+        self.from_currency_dropdown = ttk.Combobox(self.currency_frame, textvariable=self.from_currency_variable,values=list(self.currency_converter.currencies.keys()), font = font, state = 'readonly', width = 12, justify = tk.CENTER)
+        self.to_currency_dropdown = ttk.Combobox(self.currency_frame, textvariable=self.to_currency_variable,values=list(self.currency_converter.currencies.keys()), font = font, state = 'readonly', width = 12, justify = tk.CENTER)
 
         # placing of 4 lateral field boxes
 
@@ -133,12 +156,23 @@ class App:
         self.amount_field.place(relx = .067 , rely = .75, anchor=W, height =35 )
         self.to_currency_dropdown.place(relx = .93 , rely = .65, anchor=E)
         self.converted_amount_field_label.place(relx = .923 , rely = .75, anchor=E, height =35)
-        
+
         # Convert button
-        self.convert_button = Button(self.root, text = "Convert", fg = "black", command = self.perform) 
+        self.convert_button = Button(self.currency_frame, text = "Convert", fg = "black", command = self.perform) 
         self.convert_button.config(font=('Courier', 16, 'bold'))
         self.convert_button.place(relx = .5 , rely = .65, anchor=CENTER)
 
+     # method for image to be responsive       
+     #  # no need for this when using frames, frame rezies image
+ 
+    # def _resize_image(self,event):
+
+    #     new_width = event.width
+    #     new_height = event.height
+    #     self.image = self.img_copy.resize((new_width, new_height))
+    #     self.background_image = ImageTk.PhotoImage(self.image)
+    #     self.background.configure(image =  self.background_image)
+        
 # Method that will take the user input and convert the amount into the desired currency
 # and display it on the converted_amount entry box. Part of App class
     def perform(self):
@@ -151,17 +185,28 @@ class App:
 
         self.converted_amount_field_label.config(text = str(converted_amount))
 
-#    user can enter only a number in Amount Field
+    # not working try again!
+    # def restrictNumberOnly(self, action):
+    #     vcmd = (self(self.callback))
+    #     w = Entry(self.string, validate='all', validatecommand=(vcmd, '%P')) 
+    #     w.pack()
+    #     if str.isdigit(action) or action == "":
+    #         return True
+    #     else:
+    #         return False
+
+
+#    user can enter only a number/float in Amount Field working
     def restrictNumberOnly(self, action, string):
         regex = re.compile(r"[0-9,]*?(\.)?[0-9,]*$")
         result = regex.match(string)
-        return (string == "" or (string.count('.') <= 1 and result is not None))
-# creates the main function.
+        return string=="" or (string.count('.')<=1 and result is not None)
+
+# creates the main function:
 # 1. Creates the Converter 2. Creates the UI for Converter
 if __name__ == '__main__':
     url = 'https://v6.exchangerate-api.com/v6/21ead1dbb8d52ca2cdfe3088/latest/ILS'
-    converter = RealTimeCurrencyConverter(url)
+    converter = CurrencyConverter(url)
 
     App(converter)
     mainloop()
-
