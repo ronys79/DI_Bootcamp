@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <hr>
+   <h1>{{ data.name }}</h1>
+    <ul>
+        <li>email {{ data.email }}</li>
+        <li>phone number: {{ data.phone_number }}</li>
+        <li>address {{data.address}}</li>
+    </ul>
+    <hr>
+{% endblock %}
