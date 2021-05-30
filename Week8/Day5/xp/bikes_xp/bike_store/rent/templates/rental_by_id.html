@@ -1,0 +1,20 @@
+{%extends 'base.html' %}
+
+{%block title%}
+{{data.id}}: Rent ID page
+{{endblock}}
+
+{% block content %}
+<h1> {{data.id}} </h1>
+<p>customer: {{rent.customer}}</p>
+
+<p>vechile: {{rent.rental_date }}</p>
+
+<p>Return Date: {{rent.return_date}}</p>
+
+{% endblock %}
+
+<!-- /rent/rental/<pk> - show the information about the given rental:
+    customer details
+    vehicle details
+    rental details (“Returned on: <date>” / “Not yet returned”) -->

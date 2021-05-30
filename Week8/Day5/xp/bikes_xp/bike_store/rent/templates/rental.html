@@ -1,0 +1,11 @@
+{%extends 'base.html' %}
+
+{% block content %}
+<p> THi is rental</p>
+{% for r in rental%}
+<p>{{r.}}</p>
+{% endfor %}
+{% endblock %}
+
+<!-- /rent/rental/ - show a list of all rentals, unreturned first, 
+then ordered by date ascending (earliest first) -->
