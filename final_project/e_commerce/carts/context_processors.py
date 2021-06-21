@@ -10,8 +10,12 @@ def counter(request):
         try:
             # this get the cart contains session key
             cart = Cart.objects.filter(cart_id=_cart_id(request))
+            # cart count for log in user
+            if request.user.is_authenticated:
+                cart_items = CartItem.objects.all().filter(user=request.user)
+            else:
             # this brings the corrsponding cart item
-            cart_items = CartItem.objects.all().filter(cart=cart[:1])
+                cart_items = CartItem.objects.all().filter(cart=cart[:1])
             # cart item quantity
             for cart_item in cart_items:
                 cart_count += cart_item.quantity

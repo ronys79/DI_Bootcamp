@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'accounts',
     'store',
     'carts',
+    'orders'
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,17 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR /'media'
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
+
+# SMPT config - configuring email host
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'python.tester.di@gmail.com'
+# insert password of dud email and check git ignore has it checked off!!
+EMAIL_HOST_PASSWORD = 'polipoli23'
+EMAIL_USE_TLS = True
