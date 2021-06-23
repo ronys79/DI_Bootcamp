@@ -13,16 +13,18 @@ from .forms import ReviewForm
 from django.contrib import messages
 from orders.models import OrderProduct
 
+
 def store(request, category_slug=None):
     categories = None
     products = None
+    
 # what to do if slug is not empty
     if category_slug != None:
         # get page or render 404
         category = get_object_or_404(Category, slug=category_slug)
         # order by function to order in pagination, set to order by id
-        products = Product.objects.filter(category=categories, is_available=True)
-        paginator = Paginator(products, 1)
+        products = Product.objects.filter(category=category, is_available=True)
+        paginator = Paginator(products, 6)
         #  capturing url page for paginator
         page = request.GET.get('page')
         # storing products captured above to be displayed on html
@@ -33,7 +35,7 @@ def store(request, category_slug=None):
         # display all products on store if slug not found so page isnt blank
         products = Product.objects.all().filter(is_available=True).order_by('id')
         # paginator functunality to display qnt of products
-        paginator = Paginator(products, 3)
+        paginator = Paginator(products, 6)
         #  capturing url page for paginator
         page = request.GET.get('page')
         # storing products captured above to be displayed on html
@@ -50,6 +52,7 @@ def store(request, category_slug=None):
 
 def product_detail(request, category_slug, product_slug):
     # to get single view page
+    orderproduct = None
     try:
         single_product = Product.objects.get(category__slug=category_slug, slug=product_slug)
         # check if object added to cart

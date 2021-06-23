@@ -23,6 +23,10 @@
   cursor: pointer;
 }
 
+.review{
+  width: 90vw;
+
+}
 /* Half star */
 .rate .half:before{
   content: "\f089";

@@ -17,8 +17,9 @@ def _cart_id(request):
 
 def add_cart(request, product_id):
     current_user = request.user
-    # color = request.GET['color']
-    # size = request.GET['size']
+    # product variation
+    color = request.GET['color']
+    size = request.GET['size']
     # get the product
     product = Product.objects.get(id=product_id)
     # if user is authenticated
