@@ -53,7 +53,7 @@
 							<hr>
 							<div class="row">
 								<div class="item-option-select">
-									<h6>Choose Color</h6>
+									<h6>Choose Pot Color</h6>
 									<select name="color" class="form-control" required>
 										<option value="" disabled selected>Select</option>
 										{% for i in single_product.variation_set.pot_colors %}
@@ -64,11 +64,11 @@
 							</div>
 							<div class="row">
 								<div class="item-option-select">
-									<h6>Select Size</h6>
+									<h6>Select Plant Size</h6>
 									<select name="size" class="form-control" required>
 										<option value="" disabled selected>Select</option>
 										{% for i in single_product.variation_set.plant_sizes %}
-										<option value="{{ i.variation_description | lower }}">{{ i.variation_description | capfirst }}</option>
+										<option {% if forloop.first %}selected=True {% endif %} value="{{ i.variation_description | lower }}">{{ i.variation_description | capfirst }}</option>
 										{% endfor %}
 									</select>
 								</div>
