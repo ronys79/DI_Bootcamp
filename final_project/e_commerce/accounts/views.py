@@ -57,7 +57,7 @@ def register(request):
             send_email = EmailMessage(mail_subject, message, to=[to_email])
             send_email.send()
             # messages.success(request, 'Thank you for registering to Vivero Verde. Please activate your account via verification email sent to register email!')
-            return redirect('/acounts/login/?command=verification&email='+email)
+            return redirect('/accounts/login/?command=verification&email='+email)
 
     else:
         form = RegistrationForm()

@@ -56,8 +56,8 @@
 									<h6>Choose Color</h6>
 									<select name="color" class="form-control" required>
 										<option value="" disabled selected>Select</option>
-										{% for i in single_product.variation_set.colors %}
-										<option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
+										{% for i in single_product.variation_set.pot_colors %}
+										<option value="{{ i.variation_description | lower }}">{{ i.variation_description | capfirst }}</option>
 										{% endfor %}
 									</select>
 								</div>
@@ -67,8 +67,8 @@
 									<h6>Select Size</h6>
 									<select name="size" class="form-control" required>
 										<option value="" disabled selected>Select</option>
-										{% for i in single_product.variation_set.sizes %}
-										<option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
+										{% for i in single_product.variation_set.plant_sizes %}
+										<option value="{{ i.variation_description | lower }}">{{ i.variation_description | capfirst }}</option>
 										{% endfor %}
 									</select>
 								</div>
@@ -120,7 +120,7 @@
 						Review:
 						<textarea name="review" rows="4" class="form-control"></textarea>
 						<br>
-						<!-- {% if user.is_authenticated %}
+						{% if user.is_authenticated %}
 							{% if orderproduct %}
 								<input type="submit" value="Submit Review" class="btn btn-primary">
 							{% else %}
@@ -128,15 +128,15 @@
 							{% endif %}
 						{% else %}
 						<p>You must be logged in to post a review. <span><a href="{% url 'login' %}">Login now</a></span></p>
-						{% endif %} -->
+						{% endif %}
 
-						{% if user.is_authenticated %}
+						{% comment %} {% if user.is_authenticated %}
 								<input type="submit" value="Submit Review" class="btn btn-primary">
 						{% else %}
 						<p>You must be logged in to post a review. <span><a href="{% url 'login' %}">Login now</a></span></p>
 						{% endif %}
 						<div class="alert alert-danger" role="alert" style="margin-top:10px;">
-  2-Factor Review Submission is disabled for demo purpose.
+  2-Factor Review Submission is disabled for demo purpose. {% endcomment %}
 </div>
 
 					</div>
@@ -152,7 +152,7 @@
 			<i class="fa fa-star{% if single_product.averageReview < 2.5 %}-o{% elif single_product.averageReview >= 2.5 and single_product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
 			<i class="fa fa-star{% if single_product.averageReview < 3.5 %}-o{% elif single_product.averageReview >= 3.5 and single_product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
 			<i class="fa fa-star{% if single_product.averageReview < 4.5 %}-o{% elif single_product.averageReview >= 4.5 and single_product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
-	<span>{{single_product.countReview}} reviews</span>
+			<span>{{single_product.countReview}} reviews</span>
 			</span>
 	</div>
 

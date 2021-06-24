@@ -6,10 +6,8 @@ $(document).ready(function() {
 
 
     /* ///////////////////////////////////////
-
     THESE FOLLOWING SCRIPTS ONLY FOR BASIC USAGE,
     For sliders, interactions and other
-
     */ ///////////////////////////////////////
 
 

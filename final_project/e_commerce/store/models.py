@@ -2,6 +2,7 @@ from django.db import models
 from  django.urls import reverse
 from category.models import Category
 from accounts.models import Account
+from django.db.models import Avg, Count
 
 
 class Product(models.Model):
@@ -24,18 +25,33 @@ class Product(models.Model):
 
     def __str__(self):
         return self.product_name
+    
+    @property
+    def averageReview(self):
+        reviews = ReviewRating.objects.filter(product=self, status=True).aggregate(average=Avg('rating'))
+        avg = 0
+        if reviews['average'] is not None:
+            avg = float(reviews['average'])
+        return avg
+
+    def countReview(self):
+        reviews = ReviewRating.objects.filter(product=self, status=True).aggregate(count=Count('id'))
+        count = 0
+        if reviews['count'] is not None:
+            count = int(reviews['count'])
+        return count
 
 # variation of products if want to implement it
 class VariationManager(models.Manager):
-    def colors(self):
-        return super(VariationManager, self).filter(variation_category='pot color', is_active=True)
+    def pot_colors(self):
+        return super(VariationManager, self).filter(variation_category='pot_color', is_active=True)
 
-    def sizes(self):
-        return super(VariationManager, self).filter(variation_category='plant size', is_active=True)
+    def plant_sizes(self):
+        return super(VariationManager, self).filter(variation_category='plant_size', is_active=True)
 
 variation_category_choice = (
-    ('pot color', 'pot color'),
-    ('plant size', 'plant size'),
+    ('pot_color', 'pot_color'),
+    ('plant_size', 'plant_size'),
 )
 
 class Variation(models.Model):

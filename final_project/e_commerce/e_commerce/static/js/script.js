@@ -6,10 +6,8 @@ $(document).ready(function() {
 
 
     /* ///////////////////////////////////////
-
     THESE FOLLOWING SCRIPTS ONLY FOR BASIC USAGE,
     For sliders, interactions and other
-
     */ ///////////////////////////////////////
 
 
@@ -60,4 +58,4 @@ $(document).ready(function() {
 
 setTimeout(function(){
   $('#message').fadeOut('slow')
-}, 3000)
+}, 4000)
