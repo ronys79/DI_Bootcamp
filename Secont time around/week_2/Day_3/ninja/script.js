@@ -62,8 +62,8 @@ let student1 = findAvg(gradesList)
 console.log(typeof(student1))
 
 
-function passed(student1) {
-    if ( student1 > 65){
+function passed(studentGpa) {
+    if ( studentGpa > 65){
         console.log(`You passed!`);
     }
     else{
