@@ -8,3 +8,7 @@ if (wordBad > wordNot) {
 }
 
 console.log(sentence);
+
+let stringWithoutCommas = sentence.replace(/,/g, '');
+console.log(let stringWithoutCommas = sentence.replace(/,/g, '');
+);
