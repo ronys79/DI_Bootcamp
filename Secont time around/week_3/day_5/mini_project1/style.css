@@ -1,15 +1,14 @@
 body {
-    background-color: cornsilk;
+    background-color: rgb(28, 52, 194);
 }
 
-.all{
+.menu{
     display: flex;
-    color: cadetblue;
+    color: black;
     margin: 20px;
-    /* flex-wrap: wrap; */
 }
 
-.part1{
+.submenu{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,12 +21,14 @@ body {
 }
 
 .paint-here{
-    width:800px;
+    width:1000px;
 }
 
 .col-sm{
-    border: 2px black solid;
+    border: .5px black solid;
     height: 20px;
-    margin: 2px;
+    width: 20px;
     text-align: center;
+    flex-wrap: wrap;
+
 }

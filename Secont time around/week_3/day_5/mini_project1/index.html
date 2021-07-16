@@ -9,19 +9,20 @@
     <title>Ex1 - Colors Game</title>
 </head>
 <body>
-    <div class="all">
-        <div class="part1">
+    <div class="menu">
+        <div class="submenu">
             <h1>Color game</h1>
             <h3>Pick a color:</h3>
             <div id="colors-pick-cont">
                 <input oninput="pickColor()" type="color" id="color-picker" value="#ffffff">
             </div>
+
             <div class="resetBtn">
                 <br>
                 <input type="button" value="RESET" id="reset">
             </div>
         </div>
-        <div class="paint-here">
+        <div class="paint-here" onclick="clearColor()">
 
         </div>
     </div>
