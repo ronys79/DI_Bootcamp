@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="blackjack.css">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="blackjack.css">
+</head>
     <body>
+        <div>
+            <div id="message">Press Start Button</div>
+            <div id="start">
+            <button id="btnstart" type="button" onclick="Start()" class="btn">Start Game</button>
+        </div>
     <div id="output">
-
+        Dealer Hand :
+        <div id="dealerHolder"></div>
+        Player Hand :
+        <div id="playerHolder"></div>
     </div>
-        <script src="blackjack.js"></script>
-    </body>
+<script src="blackjack.js"></script>
+</body>
 </html>
