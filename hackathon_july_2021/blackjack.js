@@ -32,12 +32,6 @@ for (s in suits) {
   }
 }
 
-
-
-
-
-// console.log(cards);
-
 // function ranCard() {
 //   var randomNum = Math.floor((Math.random() * 52));
 //   output.innerHTML += "<span style='color:" + cards[randomNum].bgcolor + "'>&" + cards[randomNum].icon + ";" + cards[randomNum].cardnum + "</span>  ";
@@ -47,7 +41,6 @@ for (s in suits) {
 function Start() {
 shuffleDeck(cards);
 dealNew();
-
 }
 
 function dealNew() {
@@ -57,24 +50,31 @@ dealerCard = [];
 dealerHolder.innerHTML = "";
 playerHolder.innerHTML = "";
 // loop to get 2 cards each per player
-for (x = 0; x < 2; x++) {
+for (dealtCard = 0; dealtCard < 2; dealtCard++) {
     // dealers/players cards - capturing cards from array
     dealerCard.push(cards[cardCount]);
-    dealerHolder.innerHTML += cardOutput(cardCount);
+    dealerHolder.innerHTML += cardOutput(cardCount, dealtCard);
+    // hide dealers first cards
+    if  (dealtCard==0) {
+        dealerHolder.innerHTML += "<div id='cover' style='left:100;'></div>"
+    }
     cardCount++
     playerCard.push(cards[cardCount]);
-    playerHolder.innerHTML += cardOutput(cardCount);
+    playerHolder.innerHTML += cardOutput(cardCount, dealtCard);
     cardCount++
-}
-console.log(dealerCard);
-console.log(playerCard);
-
-}
-
-//  returns cardCount value in generated html/css output deping on what the card is
-function cardOutput(n) {
-    return "<span style='color:" + cards[cardCount].bgcolor + "'>" + cards[cardCount].cardnum + "&" + cards[cardCount].icon + ";</span>  "
     }
+}
+
+//  returns cardCount value in generated html/css output depending on what the value is from (var card)
+function cardOutput(n, dealtCard) {
+    // position adjustable of first/second card
+    var pos1stcard = 100;
+    var pos2ndcard = 165;
+    // var to change postion of card if not the first card(dealtCard=0)
+    var hpos = (dealtCard > 0) ? dealtCard * pos2ndcard : pos1stcard;
+    return '<div class="icard ' + cards[n].icon + '" style="left:' + hpos + 'px;">  <div class="top-card suit">' + cards[n].cardnum + '<br></div>  <div class="content-card suit"></div>  <div class="bottom-card suit">' + cards[n].cardnum +
+      '<br></div> </div>';
+}
 
 function shuffleDeck(array) {
     // loop through deck of cards iin reverse order till none left 
@@ -92,9 +92,9 @@ function shuffleDeck(array) {
     }
     // return value of array/cards to be used with function start(shuffleDeck(cards))
     return array;
-    }
+}
 
 function outputCard() {
     // pick up and return first cards value to html using (var cardCount)
     output.innerHTML += "<span style='color:" + cards[cardCount].bgcolor + "'>" + cards[cardCount].cardnum + "&" + cards[cardCount].icon + ";</span>  ";
-    }
+}
