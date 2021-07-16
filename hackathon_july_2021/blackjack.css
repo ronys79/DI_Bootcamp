@@ -1,8 +1,26 @@
 #output {
   font-size: 1.5em;
 }
+
+/* elements hidden/shown */
+
+#btndeal, #myactions {
+  display:none;
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 8px 20px;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  text-shadow: 1px 1px #000000;
+  font: normal 700 24px/1 "Calibri", sans-serif;
+}
+
 /* cover dealers 1st card */
 #cover {
+  /* add image of card here */
   background-color: brown;
   /* this part same as other cards */
   height: 160px;
@@ -10,7 +28,7 @@
   padding: 3px;
   border: 1px solid black;
   border-radius: 10px;
-
+  position: absolute;
 }
 
 /* card output */
@@ -82,4 +100,34 @@
 #dealerHolder, #playerHolder {
   height: 180px;
   width: 500px;
+}
+
+#message {
+  height: 70px;
+  font-size: 30px;
+  text-align: center;
+}
+
+#btnhold {
+  background-color:green;
+}
+
+#btnhit {
+  background-color:red;
+}
+
+#btndouble {
+  background-color:blue;
+}
+
+#maxbet {
+  background-color:red;
+}
+
+#btnstart {
+  background-color:black;
+}
+
+.total {
+  font-size: 30px;
 }

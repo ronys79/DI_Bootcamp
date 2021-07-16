@@ -11,6 +11,9 @@ var dealerCard = [];
 var dealerHolder = document.getElementById("dealerHolder");
 var playerHolder = document.getElementById("playerHolder");
 
+var moneyAvailable = 100;
+
+var message = document.getElementById("message");
 
 for (s in suits) {
     // get value of card suit
@@ -41,6 +44,10 @@ for (s in suits) {
 function Start() {
 shuffleDeck(cards);
 dealNew();
+// start button not shown after click play
+document.getElementById("start").style.display = "none";
+// display total monetary value
+document.getElementById("money").innerHTML = moneyAvailable;
 }
 
 function dealNew() {
@@ -49,20 +56,42 @@ playerCard = [];
 dealerCard = [];
 dealerHolder.innerHTML = "";
 playerHolder.innerHTML = "";
-// loop to get 2 cards each per player
+
+// bets and money amount
+var betValue = document.getElementById("mybet").value;
+
+// changesvalue of moneyAvailable on Html
+moneyAvailable = moneyAvailable-betValue;
+document.getElementById("money").innerHTML = moneyAvailable;
+
+// enable on new deal
+document.getElementById("myactions").style.display = "block";
+
+// display to user current bet
+message.innerHTML = "Reach 21 to win Blackjack or beat the dealer to take the pot!<br>Current bet is $"+betValue;
+
+// disable on new deal
+document.getElementById("mybet").disabled = true;
+document.getElementById("maxbet").disabled = true;
+deal()
+}
+
+function deal(){
+    // loop to get 2 cards each per player
 for (dealtCard = 0; dealtCard < 2; dealtCard++) {
     // dealers/players cards - capturing cards from array
     dealerCard.push(cards[cardCount]);
     dealerHolder.innerHTML += cardOutput(cardCount, dealtCard);
     // hide dealers first cards
-    if  (dealtCard==0) {
-        dealerHolder.innerHTML += "<div id='cover' style='left:100;'></div>"
+    if (dealtCard == 0) {
+        dealerHolder.innerHTML += '<div id="cover" style="left:100px;"></div>';
     }
     cardCount++
     playerCard.push(cards[cardCount]);
     playerHolder.innerHTML += cardOutput(cardCount, dealtCard);
     cardCount++
     }
+
 }
 
 //  returns cardCount value in generated html/css output depending on what the value is from (var card)
@@ -73,8 +102,33 @@ function cardOutput(n, dealtCard) {
     // var to change postion of card if not the first card(dealtCard=0)
     var hpos = (dealtCard > 0) ? dealtCard * pos2ndcard : pos1stcard;
     return '<div class="icard ' + cards[n].icon + '" style="left:' + hpos + 'px;">  <div class="top-card suit">' + cards[n].cardnum + '<br></div>  <div class="content-card suit"></div>  <div class="bottom-card suit">' + cards[n].cardnum +
-      '<br></div> </div>';
+    '<br></div> </div>';
 }
+
+function cardAction(userAction) {
+    switch (userAction){
+        case 'hit':
+            addPlayerCard();
+            break;
+        case 'hold':
+            playend(); // calculate and payout
+            break;
+        case 'double':
+            // double current bet and remove value from moneyAvailable
+            addPlayerCard();
+            playend(); // calculate and payout
+        default:
+            console.log("default end game")
+            playend(); // calculate and payout
+    }
+}
+
+function addPlayerCard(){
+    playerCard.push(cards[cardCount]);
+    playerHolder.innerHTML += cardOutput(cardCount, (playerCard.lenght -1));
+    cardCount++
+}
+
 
 function shuffleDeck(array) {
     // loop through deck of cards iin reverse order till none left 

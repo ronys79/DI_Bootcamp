@@ -9,19 +9,34 @@
     <link rel="stylesheet" href="blackjack.css">
 </head>
   <div>
-    <div id="message">Press Start Button</div>
-    <div id="start">
-      <button id="btnstart" type="button" onclick="Start()" class="btn">Start Game</button>
-    </div>
-    <div id="output">
-      Dealer Hand :
-      <div id="dealerHolder"></div>
-      Player Hand :
-      <div id="playerHolder"></div>
-    </div>
-
     <div>
-    </div>
+      <h1>JavaScript BlackJack Game</h1>
+      <div id="start">
+        <button id="btnstart" type="button" onclick="Start()" class="btn">Start Game</button>
+      </div>
+      <div class="total">Total $<span id="money">100</span></div>
+      <div>Bet Amount $<input type="number" id="mybet" value="5" min="1" max="100"><button id="maxbet" type="button" onclick="maxbet()" class="btn">Max Bet</button>
+        <div>
+          <button id="btndeal" type="button" onclick="dealNew()" class="btn">Deal</button>
+        </div>
+      </div>
+      <div id="message">Press Start Button</div>
+
+      <div id="output">
+        Dealer Hand : <span id="dValue"></span>
+        <div id="dealerHolder"></div>
+        Player Hand : <span id="pValue"></span>
+        <div id="playerHolder"></div>
+        <div id="myactions">
+          <button id="btnhold" type="button" onclick="cardAction('hold')" class="btn">Hold</button>
+          <button id="btnhit" type="button" onclick="cardAction('hit')" class="btn">Hit</button>
+          <button id="btndouble" type="button" onclick="cardAction('double')" class="btn">Double</button>
+        </div>
+
+      </div>
+
+      <div>
+      </div>
     </div>
 <script src="blackjack.js"></script>
 </body>
