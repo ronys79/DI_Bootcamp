@@ -1,11 +1,63 @@
-#output {
-  font-size: 1.5em;
+@font-face {
+  font-family: 'title';
+    src: url('xiparoslombard.regular.ttf');
 }
 
-/* elements hidden/shown */
+@font-face {
+  font-family: 'cardfont';
+    src: url('cardfont3.ttf');
+}
 
-#btndeal, #myactions {
-  display:none;
+@font-face {
+  font-family: 'screenfont';
+    src: url('font_screen1.ttf');
+}
+
+
+body {
+  background-image: url("background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+#title {
+  font-family: 'title';
+  font-size: 3.5em;
+  margin: 5px;
+  position: absolute;
+  left: 33%;
+  top: 13%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#output {
+  visibility: hidden;
+  font-size: 2.3em;
+  color: white;
+  font-family: 'screenfont';
+  margin-left: 5rem;
+  -webkit-text-stroke: .2px black;
+}
+
+#myactions {
+  visibility: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+#btndeal  {
+  visibility: hidden;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }
 
 .btn {
@@ -18,20 +70,19 @@
   font: normal 700 24px/1 "Calibri", sans-serif;
 }
 
-/* cover dealers 1st card */
 #cover {
-  /* add image of card here */
-  background-color: brown;
-  /* this part same as other cards */
   height: 160px;
   width: 120px;
-  padding: 3px;
-  border: 1px solid black;
+  background-image: url("card.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 10px;
   position: absolute;
+  border: 1px solid black;
+  padding: 3px;
 }
 
-/* card output */
 .icard {
   height: 160px;
   width: 120px;
@@ -39,33 +90,30 @@
   border: 1px solid black;
   background-color: white;
   border-radius: 10px;
-  /* allows once card above the other */
   position: absolute;
   left: 100px;
   display: inline-block;
-  /* GET A BETTER FONT!!  */
-  font-family: 'Lato';
-}
-/* top left of card */
-.top-card {
-  font-size: 30px;
-  line-height: 20px;
-  left: 2px;
-  top: 2px;
+  font-family: 'cardfont';
 }
 
-/* suit in middle of card */
+.top-card {
+  font-size: 35px;
+  line-height: 19px;
+  left: 4px;
+  top: 4px;
+}
+
 .content-card {
   text-align: center;
   font-size: 70px;
 }
-/* bottom right of card */
+
 .bottom-card {
-  font-size: 30px;
-  line-height: 20px;
-  right: 2px;
-  bottom: 2px;
-  /* inverts so upside down and responsive to all browsers */
+  font-size: 35px;
+  margin: 2px;
+  line-height: 16px;
+  right: 4px;
+  bottom: 4px;
   transform: rotate(-180deg);
   -webkit-transform: rotate(-180deg);
   -moz-transform: rotate(-180deg);
@@ -82,52 +130,272 @@
 }
 
 .hearts .suit::after {
+  padding: 17px;
   content: '\2665';
 }
 
 .diams .suit::after {
+  padding: 17px;
   content: '\2666';
 }
 
 .spades .suit::after {
+  padding: 17px;
   content: '\2660';
 }
 
 .clubs .suit::after {
+  padding: 17px;
   content: '\2663';
 }
 
 #dealerHolder, #playerHolder {
   height: 180px;
   width: 500px;
+  margin: 10px;
+
 }
 
 #message {
-  height: 70px;
+  position: absolute;
+  border-radius: 4px;
+  /* height: 90px; */
   font-size: 30px;
   text-align: center;
+  margin: 10px;
+  top: 35%;
+  left: 40%;
+  background-color: rgb(219, 212, 180);
+  color: rgb(167, 14, 14);
+  text-shadow: -1px 0 white, 0 .5px white, .5px 0 white, 0 -1px white;
 }
 
 #btnhold {
-  background-color:green;
+  background-color: green;
 }
 
 #btnhit {
-  background-color:red;
+  background-color: red;
 }
 
 #btndouble {
-  background-color:blue;
+  background-color: blue;
+}
+
+#btndeal {
+  background-color: purple;
 }
 
 #maxbet {
-  background-color:red;
+  visibility: visible;
+  background-color: red;
+  font-size: 12px;
 }
 
-#btnstart {
-  background-color:black;
+#mybet {
+  font-size: 28px;
+  margin: 10px;
+  background-color: white;
 }
 
 .total {
-  font-size: 30px;
+  font-family: 'screenfont';
+  font-size: 2.7em;
+  color: white;
+  margin: 10px;
+  -webkit-text-stroke: .2px black;
+}
+
+.glow-on-hover {
+  border-radius: 5px;
+  padding: 8px 20px;
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 0;
+  border-radius: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  font-size: 1.2em;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px #000000;
+  font: normal 700 24px/1 "Calibri", sans-serif;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #5c713e, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #5c713e;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+/* alert box */
+
+#modalContainer {
+    background-color:rgba(0, 0, 0, 0.3);
+    position:absolute;
+    /* width:100%;
+    height:100%; */
+    top:150px;
+    left:0px;
+    z-index:10000;
+}
+
+#alertBox {
+    position:relative;
+    width:300px;
+    min-height:100px;
+    margin-top:50px;
+    border:1px solid #666;
+    background-color:rgb(229, 221, 186);
+    background-repeat:no-repeat;
+    background-position:20px 30px;
+    border-radius: 10px;
+}
+
+#modalContainer > #alertBox {
+    position:fixed;
+}
+
+#alertBox h1 {
+    margin:0;
+    font:bold 0.9em verdana,arial;
+    background-color:#5c713e;
+    color:black;
+    border-bottom:1px solid #000;
+    padding:2px 0 2px 5px;
+    text-align:center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-shadow: 1px 1px;
+}
+
+#alertBox p {
+    font:0.7em verdana,arial;
+    color:black;
+    font: bold 0.9em verdana,arial;
+    height:50px;
+    padding-left:5px;
+    margin-left:55px;
+    margin-top: 25px;
+}
+
+#alertBox #closeBtn {
+    display:block;
+    position:relative;
+    margin:5px auto;
+    padding:7px;
+    border:0 none;
+    width:70px;
+    font:0.8em verdana,arial;
+    text-transform:uppercase;
+    text-align:center;
+    color:black;
+    background-color:#5c713e;
+    border-radius: 3px;
+    text-decoration:none;
+}
+
+/* unrelated styles */
+
+#mContainer {
+    position:relative;
+    width:600px;
+    margin:auto;
+    padding:5px;
+    border-top:2px solid #000;
+    border-bottom:2px solid #000;
+    font:0.7em verdana,arial;
+}
+
+h1,h2 {
+    margin:0;
+    padding:4px;
+    font:bold 1.5em verdana;
+    border-bottom:1px solid #000;
+}
+
+code {
+    font-size:1.2em;
+    color:#069;
+}
+
+#credits {
+    position:relative;
+    margin:25px auto 0px auto;
+    width:350px; 
+    font:0.7em verdana;
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+    height:90px;
+    padding-top:4px;
+}
+
+#credits img {
+    float:left;
+    margin:5px 10px 5px 0px;
+    border:1px solid #000000;
+    width:80px;
+    height:79px;
+}
+
+.important {
+    background-color: cornsilk;
+    padding:2px;
+}
+
+code span {
+    color:green;
 }

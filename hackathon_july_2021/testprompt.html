@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="alertifyjs/alertify.min.js"></script>
+<link rel="stylesheet" href="alertifyjs/alertify.min.css" />
+<!-- include a theme -->
+<link rel="stylesheet" href="alertifyjs/default.min.css" />
+
+<style>
+.divclass {
+  background: #415665;
+  height: 50px;
+  width:200px;
+  border-radius: 15px;
+  padding:20px;
+  font-size:22px;
+  color:#fff;   
+}
+</style> 
+</head>
+<body>
+<div class="divclass">
+<button onclick="promalert()">Show prompt alert</button>
+</div>
+<script>
+userinput = []
+function promalert(){
+// A prompt dialog example
+alertify.prompt("Please enter your email to proceed!")
+console.log(alertify.prompt)
+
+}
+console.log(userinput)
+</script>
+</body>
+</html>
