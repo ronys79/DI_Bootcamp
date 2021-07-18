@@ -22,10 +22,10 @@ var dollarValue = document.getElementById('money');
 
 document.getElementById('mybet').onchange = function() {
     if (this.value < 0) {
-    this.value = 0;
+        this.value = 0;
     }
     if (this.value > myMoney) {
-    this.value = myMoney;
+        this.value = myMoney;
     }
     blink(message.innerHTML = "Bet changed to $" + this.value)
 }
@@ -239,10 +239,16 @@ function endGame() {
 
 function broke() {
     if (myMoney <= 0){
-        myMoney= +prompt("You have NO money, add more funds below by typing in a number!")
+        inputtxt= prompt("You have NO money, add more funds below by typing in a number!")
+        if(isNaN(inputtxt)){
+            broke()
+        }
+        else{
+            blink(message.innerHTML = 'You have added: $'+ inputtxt + " to your wallet");
+            myMoney = inputtxt
+        }
     }
 }
-
 
 function checktotal(aceCheckerIndex) {
     var currentValue = 0;
@@ -340,4 +346,4 @@ function blink() {
            f.style.display = (f.style.display == 'none' ? '' : 'none');
         }, 500);
     }, 500);
- }
+}
