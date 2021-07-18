@@ -1,21 +1,21 @@
 @font-face {
   font-family: 'title';
-    src: url('xiparoslombard.regular.ttf');
+    src: url('fonts/title.ttf');
 }
 
 @font-face {
   font-family: 'cardfont';
-    src: url('cardfont3.ttf');
+    src: url('fonts/cardfont3.ttf');
 }
 
 @font-face {
   font-family: 'screenfont';
-    src: url('font_screen1.ttf');
+    src: url('fonts/font_screen1.ttf');
 }
 
 
 body {
-  background-image: url("background.jpg");
+  background-image: url("images/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -73,7 +73,7 @@ body {
 #cover {
   height: 160px;
   width: 120px;
-  background-image: url("card.jpg");
+  background-image: url("images/card.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
